@@ -1,4 +1,4 @@
-﻿#include "Header.h"
+#include "Lab_1_2.cpp"
 
 ModelWindow::ModelWindow(int x, int y, int sizeHorizontal, int sizeVertical, uint8_t r, uint8_t g, uint8_t b, bool state, bool frameState)
 {
