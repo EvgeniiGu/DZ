@@ -1,56 +1,23 @@
 ﻿#include "Header.h"
 
-ModelWindow::ModelWindow(int x, int y, int sizeHorizontal, int sizeVertical, uint8_t r, uint8_t g, uint8_t b, bool state, bool frameState)
+ModelWindow::ModelWindow(const int coordinatesHorizontal,
+						const int coordinatesVertical, const int sizeHorizontal,
+														const int sizeVertical, const uint8_t r, 
+																				const uint8_t g, 
+																				const uint8_t b, const bool stateWindow, const bool stateFrame)
 {
-	Coordinates.x = x;
-	Coordinates.y = y;
-	Size.horizontal = sizeHorizontal;
-	Size.vertical = sizeVertical;
+	Coordinates.horizontal = coordinatesHorizontal;
+	Coordinates.vertical = coordinatesVertical;
+	SizeScreen.horizontal = sizeHorizontal;
+	SizeScreen.vertical = sizeVertical;
 	WindowColor.R = r;
 	WindowColor.G = g;
 	WindowColor.B = b;
-	State = state;
-	FrameCondition = frameState;
+	_state = stateWindow;
+	_frameCondition = stateFrame;
 }
 
-ModelWindow::ModelWindow(int x, int y, int sizeHorizontal, int sizeVertical, uint8_t r, uint8_t g, uint8_t b, bool state)
-{
-	Coordinates.x = x;
-	Coordinates.y = y;
-	Size.horizontal = sizeHorizontal;
-	Size.vertical = sizeVertical;
-	WindowColor.R = r;
-	WindowColor.G = g;
-	WindowColor.B = b;
-	State = state;
-}
-
-ModelWindow::ModelWindow(int x, int y, int sizeHorizontal, int sizeVertical, uint8_t r, uint8_t g, uint8_t b)
-{
-	Coordinates.x = x;
-	Coordinates.y = y;
-	Size.horizontal = sizeHorizontal;
-	Size.vertical = sizeVertical;
-	WindowColor.R = r;
-	WindowColor.G = g;
-	WindowColor.B = b;
-}
-
-ModelWindow::ModelWindow(int x, int y, int sizeHorizontal, int sizeVertical)
-{
-	Coordinates.x = x;
-	Coordinates.y = y;
-	Size.horizontal = sizeHorizontal;
-	Size.vertical = sizeVertical;
-}
-
-ModelWindow::ModelWindow(int x, int y)
-{
-	Coordinates.x = x;
-	Coordinates.y = y;
-}
-
-ModelWindow::ModelWindow()
+ModelWindow::ModelWindow(ModelWindow&)
 {
 }
 
@@ -58,47 +25,41 @@ ModelWindow::~ModelWindow()
 {
 }
 
-void ModelWindow::getSizeScreen(int sizeX, int sizeY)
+void ModelWindow::Move(int horizontal, int vertical)
 {
-	SizeScreen.x = sizeX;
-	SizeScreen.y = sizeY;
+	Coordinates.horizontal += horizontal;
+	Coordinates.vertical += vertical;
 }
 
-void ModelWindow::Move(int x, int y)
+void ModelWindow::ChangeSize(int horizontal, int vertical)
 {
-	Coordinates.x += x;
-	Coordinates.y += y;
+	SizeScreen.horizontal += horizontal;
+	SizeScreen.vertical += vertical;
 }
 
-void ModelWindow::ChangeSize(int x, int y)
-{
-	Size.horizontal += x;
-	Size.vertical += y;
-}
-
-void ModelWindow::ChangeColor(int R, int G, int B)
+void ModelWindow::ChangeColor(uint8_t R, uint8_t G, uint8_t B)
 {
 	WindowColor.R = R;
 	WindowColor.G = G;
 	WindowColor.B = B;
 }
 
-void ModelWindow::ChangeState(bool state)
+void ModelWindow::ChangeStateWindow(bool stateWindow)
 {
-	State = state;
+	_state = stateWindow;
 }
 
-void ModelWindow::ChangeFrameCondition(bool state)
+void ModelWindow::ChangeFrameCondition(bool stateFrame)
 {
-	FrameCondition = state;
+	_frameCondition = stateFrame;
 }
 
-bool ModelWindow::getStatus()
+bool ModelWindow::getStatusWindow()
 {
-	return State;
+	return _state;
 }
 
 bool ModelWindow::getStatusFrame()
 {
-	return FrameCondition;
+	return _frameCondition;
 }
