@@ -18,9 +18,15 @@
     <ClCompile Include="Lab_1_2_ModelWindow.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="RGB.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="RGB.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
