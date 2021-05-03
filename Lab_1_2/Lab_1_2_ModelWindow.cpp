@@ -69,7 +69,12 @@ void ModelWindow::setCoordinatesHorizontal(const unsigned int horizontal)
 {
 	if (horizontal > monitorSizeHorizontal)
 	{
-		MessageBox(GetActiveWindow(), "Error text", "Title", MB_ICONERROR);
+		int msgboxID = MessageBox(
+			NULL,
+			(LPCWSTR)L"The entered value is incorrect",
+			(LPCWSTR)L"Entered value error",
+			MB_ICONERROR 
+			);
 	}
 	else
 	{
@@ -81,7 +86,12 @@ void ModelWindow::setCoordinatesVertical(const unsigned int vertical)
 {
 	if (vertical > monitorSizeVertical)
 	{
-		MessageBox(GetActiveWindow(), "Error text", "Title", MB_ICONERROR);
+		int msgboxID = MessageBox(
+			NULL,
+			(LPCWSTR)L"The entered value is incorrect",
+			(LPCWSTR)L"Entered value error",
+			MB_ICONERROR
+		);
 	}
 	else
 	{
@@ -93,7 +103,12 @@ void ModelWindow::setWindowSizeHorizontal(const unsigned int horizontal)
 {
 	if (horizontal + Coordinates.horizontal > monitorSizeHorizontal)
 	{
-		MessageBox(GetActiveWindow(), "Error text", "Title", MB_ICONERROR);
+		int msgboxID = MessageBox(
+			NULL,
+			(LPCWSTR)L"The entered value is incorrect",
+			(LPCWSTR)L"Entered value error",
+			MB_ICONERROR
+		);
 	}
 	else
 	{
@@ -105,7 +120,12 @@ void ModelWindow::setWindowSizeVertical(const unsigned int vertical)
 {
 	if (vertical + Coordinates.vertical > monitorSizeHorizontal)
 	{
-		MessageBox(GetActiveWindow(), "Error text", "Title", MB_ICONERROR);
+		int msgboxID = MessageBox(
+			NULL,
+			(LPCWSTR)L"The entered value is incorrect",
+			(LPCWSTR)L"Entered value error",
+			MB_ICONERROR
+		);
 	}
 	else
 	{
