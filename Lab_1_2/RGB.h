@@ -15,7 +15,7 @@ public:
 	const uint8_t getR();	// получаем каждое значение отдельно
 	const uint8_t getG();
 	const uint8_t getB();
-	//const int * getRGB();	// получаем указатель на поле класса(??)
+	const int * getRGB();	// получаем указатель на поле класса(??)
 
 	struct  StrWindowColor
 	{
