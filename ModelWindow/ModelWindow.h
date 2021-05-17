@@ -10,7 +10,7 @@ public:
 																const unsigned int sizeVertical, const unsigned int r,
 																								const unsigned g,
 																								const unsigned b, const bool isWindowActive, const bool isFrameExists);
-	ModelWindow(ModelWindow&);
+	ModelWindow(ModelWindow& other);
 	~ModelWindow();
 	void move(const int horizontal, const int vertical);
 	void changeSize(const int horizontal, const int vertical);
