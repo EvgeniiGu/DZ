@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include<typeinfo>
 
-#include"Header.h"
+#include"ModelWindow.h"
 
 using namespace std;
 
@@ -48,15 +48,20 @@ string frame()
 int main()
 {
 	cout << "Let's start working with the class ModelWindow!\n";
-	string delimiter = ":";
-	string enteredCoordinates = enterCoordinates();
-	string enteredDimensions = enterDimensions();
-	string enteredBrightness = enterBrightness();
-	string enteredStateWindow = activeWindow();
-	string enteredStateFrame = frame();
+	//string delimiter = ":";
+	//string enteredCoordinates = enterCoordinates();
+	//string enteredDimensions = enterDimensions();
+	//string enteredBrightness = enterBrightness();
+	//string enteredStateWindow = activeWindow();
+	//string enteredStateFrame = frame();
+	ModelWindow NewWindow(500, 500, 50, 500, 25, 30, 40, 1, 1);
+	cout << NewWindow.getColorR() <<' '<< NewWindow.getColorG() << ' ' << NewWindow.getColorB()<<endl;
+	ModelWindow Window2 = NewWindow;
+	Window2.changeColor(100, 120, 140);
+	cout << Window2.getColorR() << ' ' << Window2.getColorG() << ' ' << Window2.getColorB() << endl;
 	//const char* n = typeid(stoi(enteredDimensions.substr(enteredDimensions.find(delimiter), enteredDimensions.rfind(delimiter)))).name();
 	//cout<< stoi(enteredDimensions.substr(enteredDimensions.find(delimiter)+1, enteredDimensions.rfind(delimiter)));
-	ModelWindow NewWindow(stoi(enteredCoordinates.substr(0, enteredCoordinates.find(delimiter))),
+	/*ModelWindow NewWindow(stoi(enteredCoordinates.substr(0, enteredCoordinates.find(delimiter))),
 						stoi(enteredCoordinates.substr(enteredCoordinates.find(delimiter)+1, enteredCoordinates.length())),
 						stoi(enteredDimensions.substr(0, enteredDimensions.find(delimiter))), 
 						stoi(enteredDimensions.substr(enteredDimensions.find(delimiter)+1, enteredDimensions.length())),
@@ -76,5 +81,5 @@ int main()
 	case 2:
 		cout << "work in progress...";
 		break;
-	}
+	}*/
 }
