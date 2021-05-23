@@ -3,10 +3,10 @@
 class Triangle
 {
 public:
-	Triangle(const double a,
-			const double b,
-			const double c);
-	~Triangle();
+	Triangle(const double a = 0.0,
+			const double b = 0.0,
+			const double c = 0.0);
+	virtual ~Triangle();
 	Triangle(Triangle& other);
 	const double getSideA();
 	const double getSideB();
@@ -18,28 +18,10 @@ public:
 	const double getAngleB();
 	const double getAngleC();
 	const double getPerimeter();
-	/*struct SidesOfTriangle
-	{
-		unsigned int a,
-					b,
-					c;
-	};*/
 protected:
-	double sideA,
-			sideB,
-			sideC;
+	const int calculateAngle(const double a, const double b, const double c);
+	double sideA{0.0}, 
+			sideB{0.0}, 
+			sideC{0.0};
 	const bool valueEnteredCorrectly(const double value);
-	/*SidesOfTriangle Side;*/
-};
-
-class RightAngled : public Triangle
-{
-public:
-	RightAngled(double a,
-				double b,
-				double c);
-	~RightAngled();
-	const double getSquare();
-private:
-	double square;
 };
