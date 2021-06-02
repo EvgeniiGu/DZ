@@ -1,15 +1,19 @@
 #pragma once
 #include <cstdint>
 #include <string>
+
 //переопределить оператор сдвига
 class ModelWindow
 {
 public:
 	explicit ModelWindow(const unsigned int coordinatesHorizontal,
-						const unsigned int coordinatesVertical, const unsigned int sizeHorizontal,
-																const unsigned int sizeVertical, const unsigned int r,
-																								const unsigned g,
-																								const unsigned b, const bool isWindowActive, const bool isFrameExists);
+								const unsigned int coordinatesVertical,
+																			const unsigned int sizeHorizontal,
+																			const unsigned int sizeVertical,
+		const unsigned int r,
+		const unsigned int g,
+		const unsigned int b,
+		const bool isWindowActive, const bool isFrameExists);
 	ModelWindow(ModelWindow& other);
 	~ModelWindow();
 	void move(const int horizontal, const int vertical);
@@ -27,18 +31,12 @@ public:
 	struct WindowSize
 	{
 		unsigned int horizontal = 0,
-					vertical = 0;
+			vertical = 0;
 	};
 	struct WindowCoordinates//UpLeftCorner
 	{
 		unsigned int horizontal = 0,
-					vertical = 0;
-	};
-	struct WindowColor
-	{
-		int R,
-			G,
-			B;
+			vertical = 0;
 	};
 
 private:
@@ -49,12 +47,14 @@ private:
 	void setColorR(const unsigned int r);
 	void setColorG(const unsigned int g);
 	void setColorB(const unsigned int b);
+	unsigned int R{ 0 },
+				G{ 0 },
+				B{ 0 };
 	WindowSize Size;
 	WindowCoordinates Coordinates;
-	WindowColor Color;
 	std::string WindowTitle;
 	bool stateWindow = 0;
 	bool frameCondition = 0;
 	const unsigned int monitorSizeHorizontal = 1920;
 	const unsigned int monitorSizeVertical = 1080;
-};
+};//255 в константу

@@ -1,10 +1,13 @@
 ﻿#include "ModelWindow.h"
 
 ModelWindow::ModelWindow(const unsigned int coordinatesHorizontal,
-						const unsigned int coordinatesVertical, const unsigned int sizeHorizontal,
-																const unsigned int sizeVertical, const unsigned int r,
-																								const unsigned int g,
-																								const unsigned int b, const bool isWindowActive, const bool isFrameExists)
+	const unsigned int coordinatesVertical,
+	const unsigned int sizeHorizontal,
+	const unsigned int sizeVertical,
+	const unsigned int r,
+	const unsigned int g,
+	const unsigned int b,
+	const bool isWindowActive, const bool isFrameExists)
 {
 	setColorR(r);
 	setColorG(g);
@@ -42,9 +45,9 @@ const bool ModelWindow::isWindowActive() { return stateWindow; }
 const bool ModelWindow::isFrameExists() { return frameCondition; }
 const unsigned int ModelWindow::getCoordinatesHorizontal() { return Coordinates.horizontal; }
 const unsigned int ModelWindow::getCoordinatesVertical() { return Coordinates.vertical; }
-const unsigned int ModelWindow::getColorR() { return Color.R; }
-const unsigned int ModelWindow::getColorG() { return Color.G; }
-const unsigned int ModelWindow::getColorB() { return Color.B; }
+const unsigned int ModelWindow::getColorR() { return R; }
+const unsigned int ModelWindow::getColorG() { return G; }
+const unsigned int ModelWindow::getColorB() { return B; }
 void ModelWindow::setCoordinatesHorizontal(const unsigned int horizontal)
 {
 	if (horizontal > monitorSizeHorizontal)
@@ -97,7 +100,7 @@ void ModelWindow::setColorR(const unsigned int r)
 	}
 	else
 	{
-		Color.R = r;
+		R = r;
 	}
 }
 void ModelWindow::setColorG(const unsigned int g)
@@ -108,7 +111,7 @@ void ModelWindow::setColorG(const unsigned int g)
 	}
 	else
 	{
-		Color.G = g;
+		G = g;
 	}
 }
 void ModelWindow::setColorB(const unsigned int b)
@@ -119,6 +122,6 @@ void ModelWindow::setColorB(const unsigned int b)
 	}
 	else
 	{
-		Color.B = b;
+		B = b;
 	}
 }

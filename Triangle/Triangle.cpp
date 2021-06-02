@@ -14,8 +14,4 @@ const double Triangle::getAngleB() { return calculateAngle(sideA, sideB, sideC);
 const double Triangle::getAngleC() { return calculateAngle(sideB, sideC, sideA); }
 const double Triangle::getPerimeter() { return sideA + sideB + sideC; }
 const int Triangle::calculateAngle(const double a, const double b, const double c) { return acos((pow(a, 2) + pow(c, 2) - pow(b, 2)) / (2 * a * c)); }
-const bool Triangle::valueEnteredCorrectly(const double value)
-{
-	if (value > 0) return true;
-	else return false;
-}
+const bool Triangle::valueEnteredCorrectly(const double value) { return (value > 0); }
