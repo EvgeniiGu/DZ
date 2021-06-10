@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <string>
-
+//8t76ret78saeypyuyygtgf8tiy
 //переопределить оператор сдвига
 class ModelWindow
 {

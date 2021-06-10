@@ -57,14 +57,14 @@ int main()
 	cin >> b;
 	try
 	{
-		cout << calculatingRootOfLinearEquation0(a, b);
-		cout << "UwU";
-		cout << calculatingRootOfLinearEquation1(a, b);
-		cout << "UwU";
-		cout << calculatingRootOfLinearEquation2(a, b);
-		cout << "UwU";
-		cout << calculatingRootOfLinearEquation3(a, b);
-		cout << "UwU";
+		cout << calculatingRootOfLinearEquation0(a, b) << endl;
+		cout << "UwU" << endl;
+		cout << calculatingRootOfLinearEquation1(a, b) << endl;
+		cout << "UwU" << endl;
+		cout << calculatingRootOfLinearEquation2(a, b) << endl;
+		cout << "UwU" << endl;
+		cout << calculatingRootOfLinearEquation3(a, b) << endl;
+		cout << "UwU" << endl;
 	}	
 	catch(UwUException& except)
 	{
